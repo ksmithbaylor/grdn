@@ -9,15 +9,15 @@ Gem::Specification.new do |spec|
   spec.email         = ["kevin.smith@coinbase.com"]
 
   spec.summary       = "This is a program for organizing seed phrases and storing them locally, encrypted"
-  spec.homepage      = "https://github.cbhq.net/kevin-smith/grdn"
+  spec.homepage      = "https://github.com/ksmithbaylor/grdn"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.cbhq.net/kevin-smith/grdn"
-  spec.metadata["changelog_uri"] = "https://github.cbhq.net/kevin-smith/grdn/blob/develop/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = spec.homepage
+  spec.metadata["changelog_uri"] = "https://github.com/ksmithbaylor/grdn"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

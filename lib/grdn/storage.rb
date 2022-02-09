@@ -5,7 +5,7 @@ require 'digest'
 module Grdn
   class Storage
     DIR_NAME = '.grdn'
-    DEFAULT_LOCATION = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', DIR_NAME))
+    DEFAULT_LOCATION = File.expand_path(File.join(ENV['HOME'], DIR_NAME))
     SALT = "\xB9R\xB5d\xBC#I?I7\x85<\xCD\xD6UW"
     VALUE_FILENAME = 'seed.enc'
     FINAL_MARKER = '____final____'
@@ -87,15 +87,19 @@ module Grdn
     end
 
     def encrypt(string)
-      cipher = OpenSSL::Cipher::AES.new(128, :CBC).encrypt
+      cipher = aes.encrypt
       cipher.key = @key
       cipher.update(string) + cipher.final
     end
 
     def decrypt(string)
-      cipher = OpenSSL::Cipher::AES.new(128, :CBC).decrypt
+      cipher = aes.decrypt
       cipher.key = @key
       cipher.update(string) + cipher.final
+    end
+
+    def aes
+      OpenSSL::Cipher::AES.new(128, :CBC)
     end
 
     def key_for(password)
