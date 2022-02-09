@@ -51,7 +51,7 @@ module Grdn
           and stored in a tree structure. This allows organization by
           purpose, location, application, wallet, or anything else you
           can think of. They can be nested as deeply as you want. This
-          tool is not recommended for high-security use
+          tool is not recommended for security-critical usecases.
 
         =================================================================
 
