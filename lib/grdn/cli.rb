@@ -123,6 +123,7 @@ module Grdn
     end
 
     def cmd_list
+      puts
       print_tree @storage.list
       STDERR.puts
     end
@@ -136,7 +137,6 @@ module Grdn
     private
 
     def print_tree(tree, indent = 2)
-      puts
       tree.sort.to_h.each do |key, value|
         next if key == Storage::FINAL_MARKER
 
